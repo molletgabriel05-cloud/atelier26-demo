@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ATELIER 26, salon de coiffure — coupes, couleurs et soins sur mesure.">
+<meta name="theme-color" content="#171512">
+<title>ATELIER 26 — Salon de coiffure</title>
+<style>
+:root{--black:#171512;--charcoal:#24211d;--cream:#f4efe7;--ivory:#fffaf3;--gold:#bd9868;--muted:#81786e;--line:#e5dbce}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--black);font-family:Arial,Helvetica,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+.topline{background:var(--black);color:#e9dfd1;text-align:center;padding:9px 12px;font-size:10px;letter-spacing:2.3px;text-transform:uppercase}
+header{height:82px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:rgba(244,239,231,.97);position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(23,21,18,.08)}
+.brand{font: bold 24px Georgia,serif;letter-spacing:4px}.brand span{color:var(--gold)}
+nav{display:flex;gap:27px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase}nav a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#171512;border:1px solid var(--gold);padding:14px 22px;font-size:10px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:.2s}
+.btn:hover{background:transparent;color:var(--gold)}.btn.dark{background:var(--black);border-color:var(--black);color:white}.btn.dark:hover{background:var(--gold);border-color:var(--gold);color:var(--black)}
+.hero{min-height:650px;display:grid;grid-template-columns:1fr 1fr;background:var(--black);color:var(--cream)}
+.hero-copy{padding:90px 10%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.eyebrow{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:bold}
+h1{font:normal clamp(50px,6vw,82px)/1.02 Georgia,serif;margin:22px 0}h1 em{color:var(--gold);font-weight:normal}
+.hero-copy p{max-width:430px;color:#c9bfb2;margin:0 0 30px;font-size:15px}
+.hero-photo{min-height:570px;background:linear-gradient(90deg,rgba(23,21,18,.12),transparent),url('https://images.unsplash.com/photo-1521590832167-7bcbffaa6381?auto=format&fit=crop&w=1500&q=88') center/cover}
+.hero-note{margin-top:25px;color:#b9ad9d;font-size:10px;letter-spacing:1.2px;text-transform:uppercase}
+section{padding:90px 8%}.section-head{text-align:center;max-width:650px;margin:0 auto 48px}.section-head h2,h2{font:normal clamp(36px,4vw,52px)/1.12 Georgia,serif;margin:12px 0}.section-head p{color:var(--muted);font-size:14px}
+.intro-strip{display:grid;grid-template-columns:repeat(3,1fr);background:#e9dfd2;padding:27px 8%;text-align:center}.intro-strip strong{display:block;font:normal 22px Georgia}.intro-strip span{font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{background:var(--ivory);padding:30px;border:1px solid var(--line)}.service .num{font:italic 24px Georgia;color:var(--gold)}.service h3{font:normal 25px Georgia;margin:12px 0 8px}.service p{color:var(--muted);font-size:13px;min-height:62px}
+.gallery{background:var(--black);color:var(--cream)}.gallery .section-head p{color:#bcb2a6}.gallery-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:230px 230px;gap:14px}.gallery-grid img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82)}.gallery-grid .tall{grid-row:span 2}
+.pricing{background:#e9dfd2}.price-wrap{max-width:850px;margin:auto;background:var(--ivory);padding:18px 35px}.price-row{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}.price-row:last-child{border:0}.price-row small{display:block;color:var(--muted);font-size:12px}.price-row strong{white-space:nowrap;color:#8f6c43}.price-note{text-align:center;color:var(--muted);font-size:11px;margin-top:20px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.about-photo{height:470px;background:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85') center/cover}.about p{color:var(--muted);font-size:14px}
+.reviews{background:#e9dfd2}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:var(--ivory);padding:28px}.stars{color:var(--gold);letter-spacing:3px}.review blockquote{margin:15px 0;font:italic 18px/1.5 Georgia,serif}.review cite{font-style:normal;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.booking{background:var(--black);color:var(--cream)}.booking .section-head p{color:#bcb2a6}.booking-form{max-width:760px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#c9bfb2}.field input,.field select,.field textarea{width:100%;padding:13px;background:#28241f;border:1px solid #51483d;color:white;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}.booking-form .btn{grid-column:1/-1;justify-self:start}.form-help{grid-column:1/-1;color:#bcb2a6;font-size:11px;margin:0}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}.contact p{color:var(--muted)}.contact-card{background:var(--ivory);padding:28px}.contact-card div{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.contact-card div:last-child{border:0}
+footer{background:#100f0d;color:#bcb2a6;padding:30px 8%;display:flex;justify-content:space-between;gap:20px;font-size:11px}.disclaimer{background:#efe3cf;color:#5b4932;text-align:center;padding:12px 18px;font-size:11px}
+@media(max-width:800px){header{height:auto;min-height:75px;padding:15px 5%;flex-wrap:wrap;gap:12px}nav{order:3;width:100%;justify-content:space-between;gap:8px;font-size:9px}.header-cta{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:70px 8%}.hero-photo{min-height:390px}.intro-strip{padding:24px 5%;gap:12px}.intro-strip strong{font-size:17px}.services,.review-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 170px 170px}.gallery-grid .tall{grid-row:span 2}.about,.contact{grid-template-columns:1fr;gap:30px}.about-photo{height:330px}section{padding:68px 7%}}
+@media(max-width:520px){.intro-strip{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:170px 140px 140px}.price-wrap{padding:10px 20px}.price-row{font-size:13px}.booking-form{grid-template-columns:1fr}.field.full,.booking-form .btn,.form-help{grid-column:1}.booking-form .btn{width:100%}footer{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="topline">ATELIER 26 · L'élégance au quotidien · Sur rendez-vous</div>
+<header>
+  <a class="brand" href="#accueil">ATELIER <span>26</span></a>
+  <nav aria-label="Navigation principale"><a href="#prestations">Prestations</a><a href="#galerie">Galerie</a><a href="#tarifs">Tarifs</a><a href="#salon">Le salon</a><a href="#contact">Contact</a></nav>
+  <a class="btn header-cta" href="#reservation">Réserver</a>
+</header>
+<main>
+<section class="hero" id="accueil" style="padding:0">
+  <div class="hero-copy"><span class="eyebrow">Salon de coiffure · beauté & style</span>
+    <h1>Le style est<br><em>une signature.</em></h1>
+    <p>Une coupe qui vous ressemble, une couleur qui vous révèle. Accordez-vous un moment privilégié dans une atmosphère élégante et chaleureuse.</p>
+    <a class="btn" href="#reservation">Demander un rendez-vous</a>
+    <div class="hero-note">Conseil personnalisé · Coupe · Couleur · Soin</div>
+  </div>
+  <div class="hero-photo" role="img" aria-label="Intérieur élégant d'un salon de coiffure"></div>
+</section>
+<div class="intro-strip"><div><strong>Sur mesure</strong><span>Conseil personnalisé</span></div><div><strong>Avec attention</strong><span>Écoute & savoir-faire</span></div><div><strong>Tout en douceur</strong><span>Un moment pour vous</span></div></div>
+
+<section id="prestations">
+  <div class="section-head"><span class="eyebrow">Nos expertises</span><h2>Révélez votre style</h2><p>Chaque prestation commence par un échange pour comprendre vos envies et vous proposer le service adapté.</p></div>
+  <div class="services">
+    <article class="service"><span class="num">01</span><h3>Coupe & coiffage</h3><p>Diagnostic, coupe personnalisée et mise en forme pour un résultat harmonieux.</p><a href="#tarifs" class="eyebrow">Voir les tarifs →</a></article>
+    <article class="service"><span class="num">02</span><h3>Couleur & lumière</h3><p>Coloration, nuances et effets lumineux pensés selon votre style.</p><a href="#tarifs" class="eyebrow">Voir les tarifs →</a></article>
+    <article class="service"><span class="num">03</span><h3>Soins capillaires</h3><p>Un rituel de soin pour prendre le temps de chouchouter vos cheveux.</p><a href="#tarifs" class="eyebrow">Voir les tarifs →</a></article>
+  </div>
+</section>
+
+<section class="gallery" id="galerie">
+  <div class="section-head"><span class="eyebrow">L'univers Atelier 26</span><h2>Inspirations & détails</h2><p>Quelques images d'ambiance pour découvrir l'esprit du salon.</p></div>
+  <div class="gallery-grid">
+    <img class="tall" src="https://images.unsplash.com/photo-1521590832167-7bcbffaa6381?auto=format&fit=crop&w=900&q=85" alt="Espace de coiffure contemporain">
+    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=85" alt="Poste de coiffure lumineux">
+    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85" alt="Coiffure et mise en beauté">
+    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=85" alt="Détail d'un salon de coiffure">
+    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&q=85" alt="Portrait beauté et coiffure">
+  </div>
+</section>
+
+<section class="pricing" id="tarifs">
+  <div class="section-head"><span class="eyebrow">La carte des prestations</span><h2>Nos tarifs</h2><p>Des prix indicatifs pour ce site de démonstration. Le tarif réel dépendra du diagnostic et de la longueur des cheveux.</p></div>
+  <div class="price-wrap">
+    <div class="price-row"><div><b>Shampoing & brushing</b><small>Finition et mise en forme</small></div><strong>À partir de 22 €</strong></div>
+    <div class="price-row"><div><b>Coupe & brushing</b><small>Conseil, coupe et coiffage</small></div><strong>À partir de 35 €</strong></div>
+    <div class="price-row"><div><b>Coloration racines</b><small>Coloration d'entretien</small></div><strong>À partir de 48 €</strong></div>
+    <div class="price-row"><div><b>Balayage / effets lumière</b><small>Sur diagnostic personnalisé</small></div><strong>À partir de 75 €</strong></div>
+    <div class="price-row"><div><b>Soin profond</b><small>Rituel nourrissant</small></div><strong>À partir de 18 €</strong></div>
+    <div class="price-row"><div><b>Coiffure événementielle</b><small>Attache et finition</small></div><strong>À partir de 55 €</strong></div>
+  </div>
+  <p class="price-note">Tarifs fictifs — devis confirmé au salon avant toute prestation.</p>
+</section>
+
+<section class="about" id="salon">
+  <div class="about-photo" role="img" aria-label="Salon de coiffure lumineux et contemporain"></div>
+  <div><span class="eyebrow">Bienvenue chez Atelier 26</span><h2>Un moment rien qu'à vous.</h2>
+    <p>Nous imaginons chaque rendez-vous comme une expérience personnalisée : prendre le temps de vous écouter, vous conseiller et créer un résultat qui vous ressemble.</p>
+    <p>Notre univers associe lignes contemporaines, matières chaleureuses et attention portée aux détails.</p>
+    <a class="btn dark" href="#reservation">Parlons de vos envies</a>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-head"><span class="eyebrow">Vos mots comptent</span><h2>Les avis de nos clientes</h2><p>Exemples de présentation d'avis pour la maquette. Ils ne correspondent pas à de vrais témoignages.</p></div>
+  <div class="review-grid">
+    <article class="review"><div class="stars">★★★★★</div><blockquote>« Un accueil chaleureux et de très bons conseils. Je suis ravie du résultat ! »</blockquote><cite>— Camille · Avis fictif</cite></article>
+    <article class="review"><div class="stars">★★★★★</div><blockquote>« Une belle expérience, le salon est agréable et l'équipe prend le temps. »</blockquote><cite>— Manon · Avis fictif</cite></article>
+    <article class="review"><div class="stars">★★★★★</div><blockquote>« Exactement ce que je souhaitais. Je reviendrai avec plaisir. »</blockquote><cite>— Sarah · Avis fictif</cite></article>
+  </div>
+</section>
+
+<section class="booking" id="reservation">
+  <div class="section-head"><span class="eyebrow">Votre prochain rendez-vous</span><h2>Faisons connaissance.</h2><p>Envoyez une demande de rendez-vous. Le salon fictif vous recontacterait pour confirmer le créneau.</p></div>
+  <form class="booking-form" id="bookingForm">
+    <div class="field"><label for="name">Votre nom</label><input id="name" name="name" autocomplete="name" required placeholder="Prénom et nom"></div>
+    <div class="field"><label for="phone">Votre téléphone</label><input id="phone" name="phone" autocomplete="tel" required placeholder="06 00 00 00 00"></div>
+    <div class="field"><label for="service">Prestation souhaitée</label><select id="service" name="service" required><option value="">Choisir une prestation</option><option>Coupe & brushing</option><option>Coloration</option><option>Balayage</option><option>Soin capillaire</option><option>Coiffure événementielle</option><option>Conseil / autre demande</option></select></div>
+    <div class="field"><label for="date">Date souhaitée</label><input id="date" name="date" type="date" required></div>
+    <div class="field full"><label for="message">Précisions (facultatif)</label><textarea id="message" name="message" rows="3" placeholder="Indiquez vos disponibilités ou vos envies..."></textarea></div>
+    <button class="btn" type="submit">Préparer ma demande</button>
+    <p class="form-help" id="formHelp">Démo uniquement : le bouton prépare un e-mail, il n'effectue pas de réservation réelle.</p>
+  </form>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div><span class="eyebrow">Nous trouver</span><h2>À bientôt chez nous.</h2><p>Une question sur une prestation ? Contactez-nous pour échanger sur vos envies.</p><a class="btn dark" href="mailto:bonjour@atelier26-exemple.fr">Écrire au salon</a></div>
+    <div class="contact-card">
+      <div><b>Adresse</b><br>12 rue des Élégantes, 00000 Ville (fictive)</div>
+      <div><b>Téléphone</b><br>01 00 00 00 00 (fictif)</div>
+      <div><b>Horaires</b><br>Mardi – Samedi : 9h00 – 19h00<br>Lundi & dimanche : fermé</div>
+      <div><b>E-mail</b><br>bonjour@atelier26-exemple.fr</div>
+    </div>
+  </div>
+</section>
+</main>
+<div class="disclaimer">SITE DE DÉMONSTRATION — ATELIER 26, coordonnées, tarifs et avis sont fictifs. Les images sont illustratives. À remplacer et vérifier avant toute utilisation commerciale.</div>
+<footer><span>© 2026 ATELIER 26 · Site de démonstration</span><span>Identité & création web · Portfolio</span></footer>
+<script>
+document.getElementById('bookingForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const f=new FormData(this);
+  const subject=encodeURIComponent('Demande de rendez-vous — ATELIER 26');
+  const body=encodeURIComponent(
+    'Bonjour,\n\nJe souhaite demander un rendez-vous.\n\nNom : '+f.get('name')+
+    '\nTéléphone : '+f.get('phone')+'\nPrestation : '+f.get('service')+
+    '\nDate souhaitée : '+f.get('date')+'\nPrécisions : '+(f.get('message')||'Aucune')+
+    '\n\nMerci.'
+  );
+  document.getElementById('formHelp').textContent='Votre application e-mail va s’ouvrir avec votre demande préremplie. Pensez à l’envoyer.';
+  window.location.href='mailto:bonjour@atelier26-exemple.fr?subject='+subject+'&body='+body;
+});
+</script>
+</body>
+</html>
